@@ -58,22 +58,54 @@ export default function LandingPage() {
            <div className="w-32 h-32 bg-gray-200 rounded-t-2xl opacity-50 hidden md:block" />
         </div>
       </section>
-
-      {/* ================= SOCIAL PROOF ================= */}
-      <section className="py-12 bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-gray-500 font-medium mb-8">
+{/* ================= SOCIAL PROOF (UPDATED) ================= */}
+      <section className="py-12 bg-white border-b border-gray-100 overflow-hidden"> 
+        {/* ^ Tambahkan overflow-hidden di sini supaya logo yang lewat layar tidak bikin scrollbar samping */}
+        
+        <div className="max-w-6xl mx-auto px-4 text-center mb-8">
+          <p className="text-gray-500 font-medium">
             Trusted By More Than <span className="text-blue-600 font-bold">+10,000</span> Users
           </p>
-          {/* Logo Marquee (Static implementation) */}
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="flex items-center gap-2 font-bold text-xl text-gray-800">
-                <div className="w-6 h-6 bg-black text-white flex items-center justify-center rounded text-xs">N</div>
-                Notion
+        </div>
+
+        {/* Container Marquee */}
+        <div className="relative flex w-full overflow-hidden mask-gradient">
+          
+          {/* Efek pudar di kiri kanan (Opsional, biar makin estetik) */}
+          <div className="absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-white to-transparent" />
+          <div className="absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-white to-transparent" />
+
+        {/* Wrapper Animasi */}
+          <div className="flex animate-marquee gap-8 pr-8">
+            {/* SET 1: Logo Asli */}
+            {[...Array(8)].map((_, i) => (
+              <div 
+                key={`logo-1-${i}`} 
+                className="flex items-center gap-3 bg-white border border-gray-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] px-6 py-3 rounded-2xl min-w-max hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+              >
+                {/* Icon Kotak Hitam */}
+                <div className="w-6 h-6 bg-black text-white flex items-center justify-center rounded-[4px] text-[10px] font-bold">
+                  N
+                </div>
+                {/* Teks Notion */}
+                <span className="font-bold text-gray-600 text-lg">Notion</span>
+              </div>
+            ))}
+
+            {/* SET 2: Duplikat (Untuk Looping) */}
+            {[...Array(8)].map((_, i) => (
+              <div 
+                key={`logo-2-${i}`} 
+                className="flex items-center gap-3 bg-white border border-gray-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] px-6 py-3 rounded-2xl min-w-max hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+              >
+                <div className="w-6 h-6 bg-black text-white flex items-center justify-center rounded-[4px] text-[10px] font-bold">
+                  N
+                </div>
+                <span className="font-bold text-gray-600 text-lg">Notion</span>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
