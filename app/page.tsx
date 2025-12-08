@@ -196,30 +196,30 @@ export default function LandingPage() {
          </section>
 
          {/* ================= CHALLENGES ================= */}
-         <section className="py-24 bg-[#F8FAFC]">
+         <section className="py-16 md:py-24 bg-[#F8FAFC]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-               <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+               <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 md:mb-20 gap-6 md:gap-8">
                   <div className="relative">
-                     <div className="inline-flex items-center gap-2 bg-blue-50 text-[#2563EB] px-3 py-1 rounded-full text-[10px] font-bold mb-4 uppercase tracking-wider">
-                        <div className="w-4 h-4 bg-[#2563EB] rounded-full flex items-center justify-center text-white text-[8px]">A</div> Automease
+                     <div className="inline-flex items-center gap-2 bg-blue-50 text-[#2563EB] px-3 py-1.5 rounded-full text-[10px] font-bold mb-4 uppercase tracking-wider">
+                        <Image src="/logo.png" alt="Automease" width={16} height={16} className="object-contain" /> Automease
                      </div>
-                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-[1.1]">
-                        <span className="text-[#2563EB]">Challenges</span> Faced by <br /> Small Businesses
+                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-[1.1]">
+                        <span className="text-[#2563EB]">Challenges</span> Faced by<br className="hidden sm:block" /> <span className="sm:hidden"> </span>Small Businesses
                      </h2>
-                     <MousePointer2 className="absolute -right-12 top-1/2 w-12 h-12 text-black fill-white drop-shadow-xl transform -translate-y-1/2 rotate-[-15deg]" />
+                     <MousePointer2 className="hidden md:block absolute -right-12 top-1/2 w-12 h-12 text-black fill-white drop-shadow-xl transform -translate-y-1/2 rotate-[-15deg]" />
                   </div>
-                  <p className="text-gray-500 text-sm max-w-xs leading-relaxed text-left md:text-right">
+                  <p className="text-gray-500 text-sm max-w-xs leading-relaxed text-left lg:text-right">
                      Lorem ipsum is simply dummy text of the printing and typesetting industry.
                   </p>
                </div>
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                   {[1, 2, 3].map((item) => (
-                     <div key={item} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                        <div className="w-full aspect-[4/3] bg-[#F1F5F9] rounded-[1.5rem] mb-8 border border-gray-100 flex items-center justify-center">
-                           <span className="text-gray-300 font-bold text-3xl">IMG</span>
+                     <div key={item} className="bg-white p-4 sm:p-6 md:p-8 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div className="w-full aspect-[4/3] bg-[#F1F5F9] rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] mb-4 sm:mb-6 md:mb-8 border border-gray-100 flex items-center justify-center">
+                           <span className="text-gray-300 font-bold text-2xl sm:text-3xl">IMG</span>
                         </div>
-                        <h3 className="font-bold text-xl mb-2 text-gray-900">Problem {item}</h3>
-                        <p className="text-gray-500 text-xs leading-relaxed">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <h3 className="font-bold text-lg sm:text-xl mb-2 text-gray-900">Problem {item}</h3>
+                        <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
                      </div>
                   ))}
                </div>
@@ -297,43 +297,109 @@ export default function LandingPage() {
          </section>
 
          {/* ================= HOW IT WORKS ================= */}
-         <section className="py-24 bg-white">
+         <section className="py-16 md:py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-               <div className="mb-16">
-                  <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 uppercase tracking-wider">
-                     <div className="w-4 h-4 bg-gray-400 rounded-full flex items-center justify-center text-white text-[8px]">A</div> Automease
+               <div className="mb-12 md:mb-16">
+                  <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 px-3 py-1.5 rounded-full text-[10px] font-bold mb-4 uppercase tracking-wider">
+                     <Image src="/logo.png" alt="Automease" width={16} height={16} className="object-contain" /> Automease
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900">How It <span className="text-[#60A5FA]">Works</span></h2>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">How It <span className="text-[#60A5FA]">Works</span></h2>
                   <p className="text-gray-500 text-sm mt-4 max-w-md">We make automation simple, even for non-tech business owners.</p>
                </div>
 
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-                  <div className="relative z-10">
-                     <div className="w-10 h-10 rounded-full border-2 border-[#2563EB] text-[#2563EB] flex items-center justify-center font-bold mb-6">1</div>
+               {/* Mobile Layout */}
+               <div className="flex flex-col gap-8 md:hidden">
+                  {/* Step 1 */}
+                  <div className="relative">
+                     <div className="w-10 h-10 rounded-full border-2 border-[#2563EB] text-[#2563EB] flex items-center justify-center font-bold mb-4">1</div>
                      <h3 className="font-bold text-lg mb-2">Understand Your Workflow</h3>
-                     <p className="text-gray-500 text-xs">We learn how your business operates and identify repetitive tasks.</p>
+                     <p className="text-gray-500 text-sm">We learn how your business operates and identify repetitive tasks</p>
                   </div>
-                  <div className="hidden md:block absolute top-12 left-[25%] w-24 h-12 border-t-2 border-r-2 border-blue-200 rounded-tr-full transform rotate-12"></div>
 
-                  <div className="relative z-10 mt-12 md:mt-24">
-                     <div className="w-10 h-10 rounded-full border-2 border-[#2563EB] text-[#2563EB] flex items-center justify-center font-bold mb-6">2</div>
-                     <div className="bg-[#F8FAFC] p-4 rounded-xl border border-gray-100 shadow-sm">
-                        <h3 className="font-bold text-sm mb-1">Design Custom Automation</h3>
-                        <p className="text-gray-500 text-[10px]">We create a tailored workflow using n8n based on your business needs.</p>
+                  {/* Arrow Down */}
+                  <div className="flex justify-center">
+                     <svg width="40" height="50" viewBox="0 0 40 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 0 L20 35 M10 25 L20 40 L30 25" stroke="#60A5FA" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                     </svg>
+                  </div>
+
+                  {/* Step 2 */}
+                  <div className="bg-[#F8FAFC] p-5 rounded-xl border border-gray-100 shadow-sm">
+                     <div className="w-10 h-10 rounded-full border-2 border-[#93C5FD] bg-[#EFF6FF] text-[#60A5FA] flex items-center justify-center font-bold mb-4">2</div>
+                     <h3 className="font-bold text-base mb-2">Design Custom Automation</h3>
+                     <p className="text-gray-500 text-sm">We create a tailored workflow using n8n based on your business needs</p>
+                  </div>
+
+                  {/* Arrow Down */}
+                  <div className="flex justify-center">
+                     <svg width="40" height="50" viewBox="0 0 40 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 0 L20 35 M10 25 L20 40 L30 25" stroke="#60A5FA" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                     </svg>
+                  </div>
+
+                  {/* Step 3 */}
+                  <div className="bg-[#60A5FA] p-6 rounded-2xl text-white shadow-lg">
+                     <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-bold mb-4 border border-white/30">3</div>
+                     <h3 className="font-bold text-base mb-2">Build &amp; Implement</h3>
+                     <p className="text-blue-50 text-sm">Your automation system is installed and tested to ensure smooth operation</p>
+                  </div>
+               </div>
+
+               {/* Desktop Layout */}
+               <div className="hidden md:block">
+                  {/* Row 1: Step 1, Arrow 1, Empty, Step 3 */}
+                  <div className="grid grid-cols-12 gap-4 items-start">
+                     {/* Step 1 - spans 4 columns */}
+                     <div className="col-span-4 relative z-10">
+                        <div className="w-10 h-10 rounded-full border-2 border-[#2563EB] text-[#2563EB] flex items-center justify-center font-bold mb-6">1</div>
+                        <h3 className="font-bold text-lg mb-2">Understand Your Workflow</h3>
+                        <p className="text-gray-500 text-sm">We learn how your business operates and identify repetitive tasks</p>
+                     </div>
+
+                     {/* Empty spacer */}
+                     <div className="col-span-4"></div>
+
+                     {/* Step 3 - spans 4 columns */}
+                     <div className="col-span-4 relative z-10">
+                        <div className="bg-[#60A5FA] p-6 rounded-2xl text-white shadow-lg">
+                           <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-bold mb-4 border border-white/30">3</div>
+                           <h3 className="font-bold text-base mb-2">Build &amp; Implement</h3>
+                           <p className="text-blue-50 text-sm">Your automation system is installed and tested to ensure smooth operation</p>
+                        </div>
                      </div>
                   </div>
-                  <div className="hidden md:block absolute top-32 right-[25%] w-24 h-12 border-b-2 border-r-2 border-blue-200 rounded-br-full transform -rotate-12"></div>
 
-                  <div className="relative z-10">
-                     <div className="bg-[#60A5FA] p-6 rounded-2xl text-white shadow-lg">
-                        <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-bold mb-4 border border-white/30">3</div>
-                        <h3 className="font-bold text-sm mb-2">Build &amp; Implement</h3>
-                        <p className="text-blue-50 text-[10px]">Your automation system is installed and tested to ensure smooth operation.</p>
+
+                  {/* Row 2: Arrow 1 (down-right), Step 2, Arrow 2 (up-right) */}
+                  <div className="grid grid-cols-12 gap-4 items-center mt-4">
+                     {/* Arrow from Step 1 to Step 2 */}
+                     <div className="col-span-4 flex justify-end pr-4">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform translate-x-4">
+                           <path d="M40 0 C 40 40, 40 60, 75 60" stroke="#60A5FA" strokeWidth="4" fill="none" strokeLinecap="round" />
+                           <path d="M65 50 L 78 60 L 65 70" stroke="#60A5FA" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                     </div>
+
+                     {/* Step 2 - Center */}
+                     <div className="col-span-4 relative z-10">
+                        <div className="bg-[#F8FAFC] p-6 rounded-xl border border-gray-100 shadow-sm">
+                           <div className="w-10 h-10 rounded-full border-2 border-[#93C5FD] bg-[#EFF6FF] text-[#60A5FA] flex items-center justify-center font-bold mb-4">2</div>
+                           <h3 className="font-bold text-base mb-2">Design Custom Automation</h3>
+                           <p className="text-gray-500 text-sm">We create a tailored workflow using n8n based on your business needs</p>
+                        </div>
+                     </div>
+
+                     {/* Arrow from Step 2 to Step 3 */}
+                     <div className="col-span-4 flex justify-start pl-4">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform -translate-x-4">
+                           <path d="M0 60 C 40 60, 60 40, 60 10" stroke="#60A5FA" strokeWidth="4" fill="none" strokeLinecap="round" />
+                           <path d="M50 20 L 60 0 L 70 20" stroke="#60A5FA" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                      </div>
                   </div>
                </div>
             </div>
-         </section >
+         </section>
 
          {/* ================= PRICING ================= */}
          < section className="py-24 bg-white" >
@@ -444,7 +510,10 @@ export default function LandingPage() {
          {/* ================= CTA & FOOTER ================= */}
          < section className="bg-[#0F172A] relative overflow-hidden" >
             <div className="bg-[#4285F4] pt-24 pb-32 text-center px-4 relative overflow-hidden">
-               <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
+               {/* Background Grid - sama seperti hero */}
+               <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:80px_80px]" />
+               </div>
                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 relative z-10">Ready to save hours every day?</h2>
                <p className="text-blue-100 text-sm mb-8 relative z-10">Let automation handle the repetitive tasks for you.</p>
                <button className="bg-[#111827] text-white px-8 py-3 rounded-full text-sm font-bold hover:scale-105 transition shadow-xl relative z-10 border border-white/10">Get Started</button>
