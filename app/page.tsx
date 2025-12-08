@@ -354,64 +354,92 @@ export default function LandingPage() {
          </section >
 
          {/* ================= AUTOMEASE IN ACTION ================= */}
-         < section className="py-24 bg-white overflow-hidden" >
+         <section className="py-24 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 text-center mb-12">
-               <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 uppercase tracking-wider">
-                  <div className="w-4 h-4 bg-gray-400 rounded-full flex items-center justify-center text-white text-[8px]">A</div> Automease
+               <div className="inline-flex items-center gap-2 bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs font-medium mb-6 shadow-sm">
+                  <Image src="/logo.png" alt="Automease" width={20} height={20} className="object-contain" />
+                  Automease
                </div>
-               <h2 className="text-4xl font-bold text-gray-900">Automease in <span className="text-[#60A5FA]">Action</span></h2>
+               <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Automease in <span className="text-[#60A5FA]">Action</span></h2>
             </div>
-            <div className="flex gap-6 overflow-x-auto pb-8 px-4 no-scrollbar">
-               {[...Array(5)].map((_, i) => (
-                  <div key={i} className="min-w-[300px] p-6 rounded-2xl border border-gray-100 shadow-sm bg-white flex gap-4">
-                     <div className="w-10 h-10 bg-gray-200 rounded-lg flex-shrink-0" />
-                     <div>
-                        <h4 className="font-bold text-sm">BakeBali.id</h4>
-                        <p className="text-gray-500 text-xs mt-1">We cut admin work by 70% through automated order intake!</p>
-                     </div>
+
+            {/* 2 Row Infinite Sliders */}
+            <div className="flex flex-col gap-4">
+               {/* Row 1 - Slide Left */}
+               <div className="relative overflow-hidden">
+                  <div className="flex animate-marquee gap-4 hover:[animation-play-state:paused]">
+                     {[...Array(12)].map((_, i) => (
+                        <div key={i} className="min-w-[380px] p-6 rounded-2xl border border-gray-100 shadow-sm bg-white flex gap-4 flex-shrink-0">
+                           <div className="w-12 h-12 bg-gray-200 rounded-xl flex-shrink-0" />
+                           <div className="flex-1">
+                              <h4 className="font-bold text-base mb-1">BakeBali.id</h4>
+                              <p className="text-gray-500 text-sm leading-relaxed">We cut admin work by 70% through automated order intake by Automease! 🤩</p>
+                           </div>
+                        </div>
+                     ))}
                   </div>
-               ))}
+               </div>
+
+               {/* Row 2 - Slide Right */}
+               <div className="relative overflow-hidden">
+                  <div className="flex animate-marquee-reverse gap-4 hover:[animation-play-state:paused]">
+                     {[...Array(12)].map((_, i) => (
+                        <div key={i} className="min-w-[380px] p-6 rounded-2xl border border-gray-100 shadow-sm bg-white flex gap-4 flex-shrink-0">
+                           <div className="w-12 h-12 bg-gray-200 rounded-xl flex-shrink-0" />
+                           <div className="flex-1">
+                              <h4 className="font-bold text-base mb-1">BakeBali.id</h4>
+                              <p className="text-gray-500 text-sm leading-relaxed">We cut admin work by 70% through automated order intake by Automease! 🤩</p>
+                           </div>
+                        </div>
+                     ))}
+                  </div>
+               </div>
             </div>
-         </section >
+         </section>
 
          {/* ================= MEET THE TEAM ================= */}
-         < section className="py-24 bg-white" >
-            <div className="max-w-7xl mx-auto px-4">
+         <section className="py-24 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
                <div className="mb-12">
-                  <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 uppercase tracking-wider">
-                     <div className="w-4 h-4 bg-gray-400 rounded-full flex items-center justify-center text-white text-[8px]">A</div> Automease
+                  <div className="inline-flex items-center gap-2 bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs font-medium mb-6 shadow-sm">
+                     <Image src="/logo.png" alt="Automease" width={20} height={20} className="object-contain" />
+                     Automease
                   </div>
-                  <h2 className="text-4xl font-bold text-gray-900 mb-2">Meet the Automease <span className="text-[#60A5FA]">Team</span></h2>
-                  <p className="text-gray-500 text-sm">We make automation simple, even for non-tech business owners.</p>
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">Meet the Automease <span className="text-[#60A5FA]">Team</span></h2>
+                  <p className="text-gray-500 text-sm max-w-md">We make automation simple, even for non-tech business owners.</p>
                </div>
 
-               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {[1, 2, 3].map((i) => (
-                     <div key={i} className="rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm group relative">
-                        <div className="h-64 bg-gray-200 w-full relative">
-                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                     <div key={i} className="bg-gray-100 rounded-2xl overflow-hidden group relative pb-4">
+                        {/* Photo Area */}
+                        <div className="h-[280px] bg-gray-200 w-full relative rounded-2xl overflow-hidden">
+                           <span className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold text-2xl">IMG</span>
                         </div>
-                        <div className="absolute bottom-4 left-4 right-4 bg-white rounded-2xl p-4 flex justify-between items-center shadow-lg">
+                        {/* Floating Info Bar */}
+                        <div className="mx-4 -mt-6 relative z-10 p-4 flex justify-between items-center bg-white rounded-xl shadow-lg border border-gray-100">
                            <div>
-                              <h4 className="font-bold text-sm">Sutha Raditya</h4>
-                              <p className="text-gray-500 text-[10px]">Head of IT Developer</p>
+                              <h4 className="font-bold text-base">Sutha Raditya</h4>
+                              <p className="text-gray-500 text-sm">Head of IT Developer</p>
                            </div>
-                           <div className="w-8 h-8 border border-gray-200 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition cursor-pointer">
-                              <Instagram size={14} />
+                           <div className="w-10 h-10 border border-gray-200 rounded-xl flex items-center justify-center hover:bg-black hover:text-white transition cursor-pointer">
+                              <Instagram size={18} />
                            </div>
                         </div>
                      </div>
                   ))}
-                  <div className="rounded-[2rem] bg-[#3B82F6] flex flex-col items-center justify-center text-white p-8 cursor-pointer hover:bg-[#2563EB] transition">
-                     <div className="w-12 h-12 border-2 border-white/30 rounded-full flex items-center justify-center mb-4">
-                        <ArrowUpRight size={24} />
+
+                  {/* See More Card */}
+                  <div className="bg-gradient-to-br from-[#60A5FA] to-[#3B82F6] rounded-2xl flex flex-col items-center justify-center text-white p-8 cursor-pointer hover:from-[#3B82F6] hover:to-[#2563EB] transition-all min-h-[360px]">
+                     <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6 border border-white/30">
+                        <ArrowUpRight size={28} />
                      </div>
-                     <h4 className="font-bold text-lg">See More</h4>
-                     <p className="text-blue-100 text-xs">Explore all team members</p>
+                     <h4 className="font-bold text-xl mb-2">See More</h4>
+                     <p className="text-blue-100 text-sm">lorem ipsum lorem</p>
                   </div>
                </div>
             </div>
-         </section >
+         </section>
 
          {/* ================= CTA & FOOTER ================= */}
          < section className="bg-[#0F172A] relative overflow-hidden" >
