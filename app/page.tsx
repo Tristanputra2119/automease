@@ -1,7 +1,73 @@
-import React from 'react';
-import { MousePointer2, Star, Menu, ArrowUpRight, CheckCircle2, ArrowRight, Instagram, Linkedin, Twitter } from 'lucide-react';
+'use client';
+
+import React, { useRef } from 'react';
+import Image from 'next/image';
+import { MousePointer2, ArrowUpRight, ArrowRight, Instagram } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+
+// Scroll Reveal Text Component
+function ScrollRevealText() {
+   const ref = useRef(null);
+   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+   const words = [
+      { text: "At", bold: false },
+      { text: "Automease,", bold: false },
+      { text: "we're", bold: false },
+      { text: "committed", bold: false },
+      { text: "to", bold: false },
+      { text: "driving", bold: false },
+      { text: "the", bold: false },
+      { text: "future", bold: false },
+      { text: "of", bold: false },
+      { text: "business", bold: true },
+      { text: "efficiency", bold: true },
+      { text: "through", bold: false },
+      { text: "cutting-edge", bold: true },
+      { text: "automation", bold: true },
+      { text: "solutions.", bold: true },
+      { text: "With", bold: false },
+      { text: "a", bold: false },
+      { text: "team", bold: false },
+      { text: "of", bold: false },
+      { text: "industry-certified", bold: true },
+      { text: "experts", bold: false },
+      { text: "and", bold: false },
+      { text: "a", bold: false },
+      { text: "passion", bold: false },
+      { text: "for", bold: false },
+      { text: "innovation,", bold: false },
+      { text: "we", bold: false },
+      { text: "design,", bold: false },
+      { text: "install,", bold: false },
+      { text: "and", bold: false },
+      { text: "maintain", bold: false },
+      { text: "automation", bold: false },
+      { text: "systems", bold: false },
+      { text: "that", bold: false },
+      { text: "help", bold: false },
+      { text: "businesses.", bold: false },
+   ];
+
+   return (
+      <p ref={ref} className="text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] font-medium leading-[1.5] md:leading-[1.4] tracking-tight">
+         {words.map((word, i) => (
+            <motion.span
+               key={i}
+               initial={{ color: "#D1D5DB" }}
+               animate={isInView ? { color: word.bold ? "#111827" : "#6B7280" } : {}}
+               transition={{ duration: 0.4, delay: i * 0.03 }}
+               className={word.bold ? "font-semibold" : ""}
+            >
+               {word.text}{" "}
+            </motion.span>
+         ))}
+      </p>
+   );
+}
 
 export default function LandingPage() {
+
    return (
       <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-100 overflow-x-hidden">
 
@@ -17,11 +83,8 @@ export default function LandingPage() {
 
                {/* Navbar */}
                <nav className="relative z-30 flex justify-between items-center w-full max-w-7xl mb-12 md:mb-16">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:scale-105 transition-transform">
-                     <svg className="w-6 h-6 text-[#4285F4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 2L2 19h20L12 2z" />
-                        <circle cx="12" cy="14" r="3" />
-                     </svg>
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:scale-105 transition-transform overflow-hidden">
+                     <Image src="/logo.png" alt="Automease Logo" width={32} height={32} className="object-contain" />
                   </div>
                   <button className="flex items-center gap-2.5 bg-[#0F172A] text-white pl-3 pr-5 py-2.5 rounded-full text-sm font-semibold shadow-xl hover:bg-black transition-all">
                      <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
@@ -35,10 +98,7 @@ export default function LandingPage() {
                <div className="relative z-20 max-w-5xl mx-auto text-center flex flex-col items-center">
                   {/* Automease Badge */}
                   <div className="mb-8 inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 px-4 py-2 rounded-full text-white text-sm font-medium shadow-lg cursor-default">
-                     <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 2L2 19h20L12 2z" />
-                        <circle cx="12" cy="14" r="3" />
-                     </svg>
+                     <Image src="/logo.png" alt="Automease" width={20} height={20} className="object-contain" />
                      Automease
                   </div>
 
@@ -103,6 +163,38 @@ export default function LandingPage() {
             </div>
          </section>
 
+         {/* ================= SCROLL REVEAL TEXT ================= */}
+         <section className="bg-white py-20 md:py-28 relative z-10">
+            <div className="max-w-6xl mx-auto px-6 sm:px-8">
+               <div className="relative">
+                  {/* Small Label - Floated left */}
+                  <div className="md:float-left md:mr-8 md:mb-2 mb-6 md:w-[160px]">
+                     <p className="text-gray-400 text-xs leading-relaxed">
+                        Leading the Way in<br />
+                        Business Automation That<br />
+                        Power Your Growth
+                     </p>
+                  </div>
+
+                  {/* Main Text with Framer Motion scroll reveal */}
+                  <ScrollRevealText />
+
+                  {/* Clear float */}
+                  <div className="clear-both"></div>
+
+                  {/* CTA Button */}
+                  <div className="mt-10">
+                     <button className="inline-flex items-center gap-3 bg-[#DBEAFE] hover:bg-[#BFDBFE] text-gray-800 pl-5 pr-3 py-2.5 rounded-full text-sm font-medium transition-all group">
+                        <span>Learn More About Us</span>
+                        <span className="w-8 h-8 bg-[#2563EB] text-white rounded-full flex items-center justify-center group-hover:bg-[#1D4ED8] transition-colors">
+                           <ArrowRight size={16} />
+                        </span>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </section>
+
          {/* ================= CHALLENGES ================= */}
          <section className="py-24 bg-[#F8FAFC]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -137,42 +229,68 @@ export default function LandingPage() {
          {/* ================= SMART AUTOMATION (BENTO GRID) ================= */}
          <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-               <div className="text-center mb-20">
-                  <div className="inline-flex items-center gap-2 bg-blue-50 text-[#2563EB] px-3 py-1 rounded-full text-[10px] font-bold mb-4 uppercase tracking-wider">
-                     <div className="w-4 h-4 bg-[#2563EB] rounded-full flex items-center justify-center text-white text-[8px]">A</div> Automease
+               <div className="text-center mb-16">
+                  <div className="inline-flex items-center gap-2 bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-xs font-medium mb-6 shadow-sm">
+                     <Image src="/logo.png" alt="Automease" width={20} height={20} className="object-contain" />
+                     Automease
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
                      Smart Automation for Real <br /> Business <span className="text-[#2563EB]">Needs</span>
                   </h2>
                </div>
 
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[800px]">
-                  {/* Kiri: 2 Kartu Vertikal */}
-                  <div className="lg:col-span-5 flex flex-col gap-6">
+               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {/* LEFT: 2 Stacked Cards */}
+                  <div className="flex flex-col gap-6">
                      {[1, 2].map((i) => (
-                        <div key={i} className="flex-1 bg-[#F8FAFC] rounded-[2rem] p-8 border border-gray-100 relative overflow-hidden group">
-                           <h3 className="font-bold text-lg mb-2 relative z-10">Order Automation</h3>
-                           <p className="text-gray-500 text-xs mb-6 relative z-10 max-w-[250px]">Pesanan dari form otomatis masuk ke Google Sheet.</p>
-                           <div className="w-full h-40 bg-[#E2E8F0] rounded-[1.5rem] mx-auto flex items-center justify-center">
-                              <span className="text-gray-400 font-bold text-xl">IMG</span>
+                        <div key={i} className="bg-[#F8FAFC] rounded-[2rem] p-6 md:p-8 pb-0 overflow-hidden">
+                           <h3 className="font-bold text-lg mb-2 text-gray-900">Order Automation</h3>
+                           <p className="text-gray-500 text-sm mb-6">
+                              Pesanan dari form otomatis masuk ke Google Sheet, admin dapat notifikasi WA, dan invoice terkirim otomatis
+                           </p>
+                           <div className="flex justify-center">
+                              <div className="w-[200px] md:w-[280px] h-[120px] md:h-[140px] bg-[#D1D5DB] rounded-t-2xl flex items-center justify-center translate-y-8">
+                                 <span className="text-gray-500 font-bold text-2xl">IMG</span>
+                              </div>
                            </div>
                         </div>
                      ))}
                   </div>
 
-                  {/* Kanan: Bento Mix */}
-                  <div className="lg:col-span-7 flex flex-col gap-6">
-                     <div className="bg-[#60A5FA] rounded-[2rem] p-8 text-white h-[200px] flex flex-col justify-center relative overflow-hidden">
-                        <h3 className="font-bold text-xl mb-2">Order Automation</h3>
-                        <p className="text-blue-50 text-xs max-w-sm">Pesanan dari form otomatis masuk ke Google Sheet, admin dapat notifikasi WA.</p>
+                  {/* RIGHT: Single Large Card with Animated Sliders */}
+                  <div className="bg-gradient-to-b from-[#93C5FD] via-[#60A5FA] to-[#3B82F6] rounded-[2rem] overflow-hidden flex flex-col min-h-[500px]">
+                     {/* Header */}
+                     <div className="p-6 md:p-8 pb-4">
+                        <h3 className="font-bold text-xl mb-2 text-white">Order Automation</h3>
+                        <p className="text-blue-100 text-sm max-w-md">
+                           Pesanan dari form otomatis masuk ke Google Sheet, admin dapat notifikasi WA, dan invoice terkirim otomatis
+                        </p>
                      </div>
-                     <div className="flex-1 grid grid-cols-2 gap-6">
-                        <div className="bg-[#DBEAFE] rounded-[2rem] flex items-center justify-center"><span className="text-gray-300 font-bold">IMG</span></div>
-                        <div className="bg-white border border-gray-100 rounded-[2rem] flex items-center justify-center shadow-sm"><span className="text-gray-300 font-bold text-2xl">IMG</span></div>
-                        <div className="bg-white border border-gray-100 rounded-[2rem] flex items-center justify-center shadow-sm"><span className="text-gray-300 font-bold text-2xl">IMG</span></div>
-                        <div className="bg-[#DBEAFE] rounded-[2rem] flex items-center justify-center"><span className="text-gray-300 font-bold">IMG</span></div>
+
+                     {/* 2 Row Marquee Sliders */}
+                     <div className="flex flex-col gap-4 px-4 pb-4">
+                        {/* Row 1 - Slider Left to Right */}
+                        <div className="relative overflow-hidden rounded-xl">
+                           <div className="flex animate-marquee gap-4 hover:[animation-play-state:paused] h-full items-stretch">
+                              {[...Array(16)].map((_, i) => (
+                                 <div key={i} className="w-[380px] h-[240px] bg-[#DBEAFE] rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span className="text-gray-400 font-bold text-xl">IMG</span>
+                                 </div>
+                              ))}
+                           </div>
+                        </div>
+
+                        {/* Row 2 - Slider Right to Left */}
+                        <div className="relative overflow-hidden rounded-xl">
+                           <div className="flex animate-marquee-reverse gap-4 hover:[animation-play-state:paused] h-full items-stretch">
+                              {[...Array(16)].map((_, i) => (
+                                 <div key={i} className="w-[380px] h-[240px] bg-white rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span className="text-gray-300 font-bold text-xl">IMG</span>
+                                 </div>
+                              ))}
+                           </div>
+                        </div>
                      </div>
-                     <div className="bg-[#1D4ED8] rounded-[2rem] h-[100px] w-full"></div>
                   </div>
                </div>
             </div>
@@ -209,16 +327,16 @@ export default function LandingPage() {
                   <div className="relative z-10">
                      <div className="bg-[#60A5FA] p-6 rounded-2xl text-white shadow-lg">
                         <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-bold mb-4 border border-white/30">3</div>
-                        <h3 className="font-bold text-sm mb-2">Build & Implement</h3>
+                        <h3 className="font-bold text-sm mb-2">Build &amp; Implement</h3>
                         <p className="text-blue-50 text-[10px]">Your automation system is installed and tested to ensure smooth operation.</p>
                      </div>
                   </div>
                </div>
             </div>
-         </section>
+         </section >
 
          {/* ================= PRICING ================= */}
-         <section className="py-24 bg-white">
+         < section className="py-24 bg-white" >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
                <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-[10px] font-bold mb-6 uppercase tracking-wider">
                   <div className="w-4 h-4 bg-gray-400 rounded-full flex items-center justify-center text-white text-[8px]">A</div> Automease
@@ -233,10 +351,10 @@ export default function LandingPage() {
                   <div className="bg-[#F8FAFC] h-[300px] rounded-[2rem] w-full"></div>
                </div>
             </div>
-         </section>
+         </section >
 
          {/* ================= AUTOMEASE IN ACTION ================= */}
-         <section className="py-24 bg-white overflow-hidden">
+         < section className="py-24 bg-white overflow-hidden" >
             <div className="max-w-7xl mx-auto px-4 text-center mb-12">
                <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 uppercase tracking-wider">
                   <div className="w-4 h-4 bg-gray-400 rounded-full flex items-center justify-center text-white text-[8px]">A</div> Automease
@@ -254,10 +372,10 @@ export default function LandingPage() {
                   </div>
                ))}
             </div>
-         </section>
+         </section >
 
          {/* ================= MEET THE TEAM ================= */}
-         <section className="py-24 bg-white">
+         < section className="py-24 bg-white" >
             <div className="max-w-7xl mx-auto px-4">
                <div className="mb-12">
                   <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-[10px] font-bold mb-4 uppercase tracking-wider">
@@ -293,10 +411,10 @@ export default function LandingPage() {
                   </div>
                </div>
             </div>
-         </section>
+         </section >
 
          {/* ================= CTA & FOOTER ================= */}
-         <section className="bg-[#0F172A] relative overflow-hidden">
+         < section className="bg-[#0F172A] relative overflow-hidden" >
             <div className="bg-[#4285F4] pt-24 pb-32 text-center px-4 relative overflow-hidden">
                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 relative z-10">Ready to save hours every day?</h2>
@@ -327,8 +445,8 @@ export default function LandingPage() {
                   </div>
                </div>
             </div>
-         </section>
+         </section >
 
-      </main>
+      </main >
    );
 }

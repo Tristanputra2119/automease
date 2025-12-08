@@ -10,7 +10,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,9 +25,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-
+/* Marquee Animation - Left to Right */
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -39,13 +36,29 @@ body {
   }
 }
 
+/* Marquee Animation - Right to Left */
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .animate-marquee {
   animation: marquee 25s linear infinite;
   width: max-content;
-  /* Pastikan lebar konten memanjang ke samping */
 }
 
-/* Opsional: Berhenti saat di-hover */
-.animate-marquee:hover {
+.animate-marquee-reverse {
+  animation: marquee-reverse 25s linear infinite;
+  width: max-content;
+}
+
+/* Pause on hover */
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
   animation-play-state: paused;
 }
