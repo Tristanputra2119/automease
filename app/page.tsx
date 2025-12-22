@@ -11,6 +11,7 @@ import PricingSection from "./components/PricingSection";
 import AutomeaseInActionSection from "./components/AutomeaseInActionSection";
 import TeamSection from "./components/TeamSection";
 import CTAFooterSection from "./components/CTAFooterSection";
+import CopyrightFooter from "./components/CopyrightFooter";
 
 export default function LandingPage() {
    return (
@@ -25,6 +26,7 @@ export default function LandingPage() {
          <AutomeaseInActionSection />
          <TeamSection />
          <CTAFooterSection />
+         <CopyrightFooter />
       </main>
    );
 }

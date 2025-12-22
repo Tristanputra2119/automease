@@ -68,35 +68,44 @@ export default function HeroSection() {
             </div>
 
             {/* === 3-CARD IMAGE SECTION (INSIDE BLUE) === */}
-            <div className="relative z-20 w-full max-w-[1000px] px-4 flex items-end justify-center gap-0 pb-0">
-               {/* 1. LEFT WING */}
-               <div className="hidden md:block relative w-[180px] h-[180px] bg-[#D1D5DB] rounded-tl-[1.5rem] shadow-xl transform translate-x-3 z-10 flex-shrink-0 overflow-hidden">
-                  <Image
-                     src={heroImages.leftWing}
-                     alt="Feature Left"
-                     fill
-                     className="object-cover"
-                  />
-               </div>
+            <div className="relative z-20 w-full max-w-[1000px] px-4 pb-0">
+               {/* Wings container with absolute positioning */}
+               <div className="relative flex justify-center items-end">
+                  {/* 1. LEFT WING - positioned at left corner of main card */}
+                  <div 
+                     className="hidden md:block absolute w-[400px] h-[450px] z-10"
+                     style={{ left: '-50px', bottom: '0px', transform: 'rotate(-10deg)' }}
+                  >
+                     <Image
+                        src={heroImages.leftWing}
+                        alt="Feature Left"
+                        fill
+                        className="object-contain"
+                     />
+                  </div>
 
-               {/* 2. MAIN CARD */}
-               <div className="relative w-full md:w-[550px] h-[260px] md:h-[300px] bg-white rounded-t-[2rem] shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.15)] z-30 overflow-hidden flex-shrink-0">
-                  <Image
-                     src={heroImages.main}
-                     alt="Main Dashboard"
-                     fill
-                     className="object-cover object-top"
-                  />
-               </div>
+                  {/* 2. MAIN CARD - stays in center */}
+                  <div className="relative w-full md:w-[550px] h-[260px] md:h-[300px] bg-white rounded-t-[2rem] shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.15)] z-30 overflow-hidden">
+                     <Image
+                        src={heroImages.main}
+                        alt="Main Dashboard"
+                        fill
+                        className="object-cover object-top"
+                     />
+                  </div>
 
-               {/* 3. RIGHT WING */}
-               <div className="hidden md:block relative w-[180px] h-[180px] bg-[#D1D5DB] rounded-tr-[1.5rem] shadow-xl transform -translate-x-3 z-10 flex-shrink-0 overflow-hidden">
-                  <Image
-                     src={heroImages.rightWing}
-                     alt="Feature Right"
-                     fill
-                     className="object-cover"
-                  />
+                  {/* 3. RIGHT WING - positioned at right corner of main card */}
+                  <div 
+                     className="hidden md:block absolute w-[400px] h-[450px] z-10"
+                     style={{ right: '-50px', bottom: '0px', transform: 'rotate(10deg)' }}
+                  >
+                     <Image
+                        src={heroImages.rightWing}
+                        alt="Feature Right"
+                        fill
+                        className="object-contain"
+                     />
+                  </div>
                </div>
             </div>
          </section>
