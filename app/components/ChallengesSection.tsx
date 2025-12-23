@@ -8,23 +8,23 @@ const challenges = [
    {
       id: 1,
       image: "/challenges/manual-paperwork.png",
-      title: "Proses Manual & Paperwork",
+      title: "Manual Processes & Paperwork",
       description:
-         "Bisnis kecil masih bergantung pada proses manual seperti mencatat invoice, mengelola stok, dan tracking order yang memakan waktu dan rawan kesalahan.",
+         "Small businesses still rely on manual processes like recording invoices, managing inventory, and tracking orders, which are time-consuming and error-prone.",
    },
    {
       id: 2,
       image: "/challenges/time-wasted.png",
-      title: "Waktu & Biaya Terbuang",
+      title: "Wasted Time & Money",
       description:
-         "Tanpa automasi, banyak waktu produktif terbuang untuk tugas repetitif. Hal ini berdampak pada hilangnya peluang bisnis dan membengkaknya biaya operasional.",
+         "Without automation, significant productive time is wasted on repetitive tasks. This leads to missed business opportunities and escalating operational costs.",
    },
    {
       id: 3,
       image: "/challenges/scattered-systems.png",
-      title: "Data Tidak Terintegrasi",
+      title: "Fragmented Data Systems",
       description:
-         "Menggunakan berbagai aplikasi terpisah menyebabkan data tersebar dan sulit dianalisa. Pengambilan keputusan menjadi lambat dan tidak akurat.",
+         "Using multiple separate applications causes data to be scattered and difficult to analyze. Decision-making becomes slow and inaccurate.",
    },
 ];
 
@@ -52,7 +52,7 @@ export default function ChallengesSection() {
                   <MousePointer2 className="hidden md:block absolute -right-12 top-1/2 w-12 h-12 text-black fill-white drop-shadow-xl transform -translate-y-1/2 rotate-[-15deg]" />
                </div>
                <p className="text-gray-500 text-sm max-w-xs leading-relaxed text-left lg:text-right">
-                  Banyak bisnis kecil kehilangan waktu dan uang karena proses yang tidak efisien.
+                  Many small businesses lose time and money due to inefficient processes.
                </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
