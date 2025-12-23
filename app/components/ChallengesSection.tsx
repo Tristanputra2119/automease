@@ -4,6 +4,30 @@ import React from "react";
 import Image from "next/image";
 import { MousePointer2 } from "lucide-react";
 
+const challenges = [
+   {
+      id: 1,
+      image: "/challenges/manual-paperwork.png",
+      title: "Proses Manual & Paperwork",
+      description:
+         "Bisnis kecil masih bergantung pada proses manual seperti mencatat invoice, mengelola stok, dan tracking order yang memakan waktu dan rawan kesalahan.",
+   },
+   {
+      id: 2,
+      image: "/challenges/time-wasted.png",
+      title: "Waktu & Biaya Terbuang",
+      description:
+         "Tanpa automasi, banyak waktu produktif terbuang untuk tugas repetitif. Hal ini berdampak pada hilangnya peluang bisnis dan membengkaknya biaya operasional.",
+   },
+   {
+      id: 3,
+      image: "/challenges/scattered-systems.png",
+      title: "Data Tidak Terintegrasi",
+      description:
+         "Menggunakan berbagai aplikasi terpisah menyebabkan data tersebar dan sulit dianalisa. Pengambilan keputusan menjadi lambat dan tidak akurat.",
+   },
+];
+
 export default function ChallengesSection() {
    return (
       <section className="py-16 md:py-24 bg-[#F8FAFC]">
@@ -28,27 +52,28 @@ export default function ChallengesSection() {
                   <MousePointer2 className="hidden md:block absolute -right-12 top-1/2 w-12 h-12 text-black fill-white drop-shadow-xl transform -translate-y-1/2 rotate-[-15deg]" />
                </div>
                <p className="text-gray-500 text-sm max-w-xs leading-relaxed text-left lg:text-right">
-                  Lorem ipsum is simply dummy text of the printing and typesetting
-                  industry.
+                  Banyak bisnis kecil kehilangan waktu dan uang karena proses yang tidak efisien.
                </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-               {[1, 2, 3].map((item) => (
+               {challenges.map((item) => (
                   <div
-                     key={item}
+                     key={item.id}
                      className="bg-white p-4 sm:p-6 md:p-8 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
                   >
-                     <div className="w-full aspect-[4/3] bg-[#F1F5F9] rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] mb-4 sm:mb-6 md:mb-8 border border-gray-100 flex items-center justify-center">
-                        <span className="text-gray-300 font-bold text-2xl sm:text-3xl">
-                           IMG
-                        </span>
+                     <div className="w-full aspect-[4/3] bg-[#F1F5F9] rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] mb-4 sm:mb-6 md:mb-8 border border-gray-100 relative overflow-hidden">
+                        <Image
+                           src={item.image}
+                           alt={item.title}
+                           fill
+                           className="object-cover"
+                        />
                      </div>
                      <h3 className="font-bold text-lg sm:text-xl mb-2 text-gray-900">
-                        Problem {item}
+                        {item.title}
                      </h3>
                      <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
-                        Lorem ipsum is simply dummy text of the printing and
-                        typesetting industry.
+                        {item.description}
                      </p>
                   </div>
                ))}

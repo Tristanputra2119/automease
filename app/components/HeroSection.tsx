@@ -74,7 +74,7 @@ export default function HeroSection() {
                   {/* 1. LEFT WING - positioned at left corner of main card */}
                   <div 
                      className="hidden md:block absolute w-[400px] h-[450px] z-10"
-                     style={{ left: '-50px', bottom: '0px', transform: 'rotate(-10deg)' }}
+                     style={{ left: '-50px', bottom: '-50%', transform: 'rotate(-10deg)' }}
                   >
                      <Image
                         src={heroImages.leftWing}
@@ -97,7 +97,7 @@ export default function HeroSection() {
                   {/* 3. RIGHT WING - positioned at right corner of main card */}
                   <div 
                      className="hidden md:block absolute w-[400px] h-[450px] z-10"
-                     style={{ right: '-50px', bottom: '0px', transform: 'rotate(10deg)' }}
+                     style={{ right: '-50px', bottom: '-50%', transform: 'rotate(10deg)' }}
                   >
                      <Image
                         src={heroImages.rightWing}
