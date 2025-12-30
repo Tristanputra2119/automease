@@ -61,8 +61,7 @@ export default function SmartAutomationSection() {
                         Order Automation
                      </h3>
                      <p className="text-blue-100 text-sm max-w-md">
-                        Pesanan dari form otomatis masuk ke Google Sheet, admin dapat
-                        notifikasi WA, dan invoice terkirim otomatis
+                        Orders from forms auto-sync to Google Sheets, admins get notified on WhatsApp, and invoices are sent automatically.
                      </p>
                   </div>
 

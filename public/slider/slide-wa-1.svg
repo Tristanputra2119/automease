@@ -1,0 +1,28 @@
+<svg width="380" height="240" viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="cardSha" x="-10" y="-10" width="400" height="260" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0.05"/>
+      <feGaussianBlur stdDeviation="4"/>
+      <feComposite in2="SourceAlpha" operator="in"/>
+    </filter>
+  </defs>
+  
+  <rect width="380" height="240" fill="white"/>
+  <rect x="20" y="30" width="340" height="180" rx="16" fill="white" filter="url(#cardSha)" stroke="#F1F5F9"/>
+  
+  <!-- Header of the 'Notification' -->
+  <path d="M20 46C20 37.1634 27.1634 30 36 30H344C352.837 30 360 37.1634 360 46V80H20V46Z" fill="#DCFCE7"/>
+  <circle cx="50" cy="55" r="15" fill="#25D366"/>
+  <path d="M50 48L55 58H45L50 48Z" fill="white" transform="rotate(180 50 53) scale(0.6)"/> <!-- Abstract bell/icon -->
+  
+  <text x="75" y="60" font-family="sans-serif" font-weight="bold" font-size="14" fill="#14532D">Order Confirmed!</text>
+  
+  <!-- Content -->
+  <rect x="40" y="100" width="300" height="12" rx="6" fill="#F1F5F9"/>
+  <rect x="40" y="125" width="220" height="12" rx="6" fill="#F1F5F9"/>
+  
+  <rect x="40" y="155" width="300" height="40" rx="8" fill="#F0FDF4" stroke="#DCFCE7"/>
+  <text x="60" y="180" font-family="sans-serif" font-size="12" fill="#16A34A">Sending WhatsApp notification...</text>
+  <circle cx="320" cy="175" r="8" fill="#16A34A"/>
+  <path d="M317 175L320 178L323 172" stroke="white" stroke-width="2" stroke-linecap="round"/>
+</svg>

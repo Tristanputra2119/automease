@@ -18,17 +18,17 @@ export const socialProofLogos = [
 export const challengeCards = [
    {
       title: "Manual Data Entry",
-      description: "Menghabiskan waktu berjam-jam untuk input data secara manual ke spreadsheet",
+      description: "Spending hours manually inputting data into spreadsheets",
       image: "/challenges/manual-entry.png",
    },
    {
       title: "Missed Follow-ups",
-      description: "Kehilangan pelanggan potensial karena lupa follow-up pesanan",
+      description: "Losing potential customers due to forgotten order follow-ups",
       image: "/challenges/missed-followup.png",
    },
    {
       title: "Invoice Delays",
-      description: "Keterlambatan pengiriman invoice menyebabkan pembayaran terlambat",
+      description: "Late invoice delivery causing delayed payments",
       image: "/challenges/invoice-delay.png",
    },
 ];
@@ -43,56 +43,56 @@ export const testimonials = [
    {
       logo: "/testimonials/warungbali.png",
       name: "WarungBali",
-      testimonial: "Pesanan langsung masuk ke sistem, tidak perlu lagi manual input satu per satu!",
+      testimonial: "Orders go straight into the system, no more manual input one by one!",
    },
    {
       logo: "/testimonials/coffeeshop.png",
       name: "Kopi Kita",
-      testimonial: "Invoice otomatis terkirim setelah order, sangat membantu admin kami!",
+      testimonial: "Invoices sent automatically after order, huge help for our admin!",
    },
    {
       logo: "/testimonials/laundry.png",
       name: "CleanWash",
-      testimonial: "Customer langsung dapat notifikasi WhatsApp setelah laundry siap.",
+      testimonial: "Customers get WhatsApp notification instantly when laundry is ready.",
    },
 ];
 
 // Smart Automation Left Cards Data
 export const smartAutomationCards = [
    {
-      title: "Order Automation",
-      description: "Pesanan dari form otomatis masuk ke Google Sheet, admin dapat notifikasi WA, dan invoice terkirim otomatis",
-      image: "/automation/order.png",
+      title: "WhatsApp Automation",
+      description: "Send automated messages to customers for order confirmation, status updates, and notifications via WhatsApp.",
+      image: "/automation/whatsapp-view.svg",
    },
    {
-      title: "Invoice Automation",
-      description: "Invoice otomatis dikirim ke pelanggan setelah order masuk, lengkap dengan tracking status",
-      image: "/automation/invoice.png",
+      title: "Spreadsheet Admin",
+      description: "Manage all order data in integrated Google Sheets. Changing a status automatically sends updates.",
+      image: "/automation/spreadsheet-view.svg",
    },
 ];
 
 // Smart Automation Slider Images - Row 1 (Light blue cards)
 export const sliderImagesRow1 = [
-   { image: "/slider/slide1.png" },
-   { image: "/slider/slide2.png" },
-   { image: "/slider/slide3.png" },
-   { image: "/slider/slide4.png" },
-   { image: "/slider/slide5.png" },
-   { image: "/slider/slide6.png" },
-   { image: "/slider/slide7.png" },
-   { image: "/slider/slide8.png" },
+   { image: "/slider/slide-wa-1.svg" },
+   { image: "/slider/slide-sheet-1.svg" },
+   { image: "/slider/slide-wa-1.svg" },
+   { image: "/slider/slide-sheet-1.svg" },
+   { image: "/slider/slide-wa-1.svg" },
+   { image: "/slider/slide-sheet-1.svg" },
+   { image: "/slider/slide-wa-1.svg" },
+   { image: "/slider/slide-sheet-1.svg" },
 ];
 
 // Smart Automation Slider Images - Row 2 (White cards)
 export const sliderImagesRow2 = [
-   { image: "/slider/slide-a.png" },
-   { image: "/slider/slide-b.png" },
-   { image: "/slider/slide-c.png" },
-   { image: "/slider/slide-d.png" },
-   { image: "/slider/slide-e.png" },
-   { image: "/slider/slide-f.png" },
-   { image: "/slider/slide-g.png" },
-   { image: "/slider/slide-h.png" },
+   { image: "/slider/slide-sheet-1.svg" },
+   { image: "/slider/slide-wa-1.svg" },
+   { image: "/slider/slide-sheet-1.svg" },
+   { image: "/slider/slide-wa-1.svg" },
+   { image: "/slider/slide-sheet-1.svg" },
+   { image: "/slider/slide-wa-1.svg" },
+   { image: "/slider/slide-sheet-1.svg" },
+   { image: "/slider/slide-wa-1.svg" },
 ];
 
 // Team Members
@@ -131,5 +131,49 @@ export const team = [
       role: "Full-Stack Developer",
       instagram: "https://www.instagram.com/ddiwaa_/",
       objectPosition: "object-top",
+   },
+];
+
+// Pricing Packages
+// Pricing Packages
+export const pricingPackages = [
+   {
+      name: "Starter",
+      price: "Rp 199k",
+      description: "Perfect for small businesses starting their automation journey.",
+      features: [
+         "Auto-save Orders to Google Sheets",
+         "Basic WhatsApp Notifications",
+         "Up to 100 Orders / Month",
+         "Email Support",
+      ],
+      highlight: false,
+   },
+   {
+      name: "Business",
+      price: "Rp 499k",
+      description: "Advanced automation for growing businesses with high volume.",
+      features: [
+         "Everything in Starter",
+         "Instant WhatsApp Replies",
+         "Create Invoices Automatically",
+         "Status Tracking Dashboard",
+         "Unlimited Orders",
+         "Priority Support",
+      ],
+      highlight: true,
+   },
+   {
+      name: "Enterprise",
+      price: "Custom",
+      description: "Tailored solutions for large scale operations.",
+      features: [
+         "Everything in Business",
+         "Custom System Setup",
+         "Dedicated Account Manager",
+         "Connect External Apps",
+         "Priority Reliability Guarantee",
+      ],
+      highlight: false,
    },
 ];

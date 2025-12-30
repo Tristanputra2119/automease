@@ -1,0 +1,94 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-4" y="0" width="10" height="100%" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0.1"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite in2="SourceAlpha" operator="in"/>
+    </filter>
+     <linearGradient id="headerGrad" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF"/>
+      <stop offset="1" stop-color="#F9FAFB"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main Background -->
+  <rect width="800" height="600" fill="#EFEAE2"/> <!-- Standard WA pattern bg color approximate -->
+  <path opacity="0.4" d="M0 0h800v600H0z" fill="url(#doodle_pattern)" /> <!-- Placeholder for doodle pattern implication -->
+  
+  <!-- Sidebar (Left) -->
+  <rect width="280" height="600" fill="#FFFFFF"/>
+  <rect width="280" height="600" fill="none" stroke="#E9EDF0" stroke-width="1" stroke-opacity="0.5"/> <!-- Right border -->
+
+  <!-- Sidebar Header -->
+  <rect width="280" height="70" fill="#F0F2F5"/>
+  <circle cx="40" cy="35" r="20" fill="#CBD5E0"/>
+  <rect x="200" y="25" width="20" height="20" rx="10" fill="none" stroke="#54656F" stroke-width="2"/>
+  <rect x="235" y="25" width="20" height="20" rx="4" fill="none" stroke="#54656F" stroke-width="2"/>
+  
+  <!-- Sidebar Search -->
+  <rect x="15" y="80" width="250" height="40" rx="8" fill="#F0F2F5"/>
+  <circle cx="35" cy="100" r="8" fill="none" stroke="#54656F" stroke-width="2"/>
+  <rect x="55" y="96" width="100" height="8" rx="4" fill="#8696A0"/>
+
+  <!-- Contact List -->
+  <!-- Active Contact -->
+  <rect x="0" y="130" width="280" height="80" fill="#F0F2F5"/>
+  <circle cx="40" cy="170" r="24" fill="#25D366"/> <!-- User Avatar -->
+  <rect x="80" y="155" width="120" height="12" rx="4" fill="#111B21"/> <!-- Name -->
+  <rect x="80" y="180" width="160" height="10" rx="4" fill="#667781"/> <!-- Last message -->
+  <rect x="230" y="160" width="30" height="8" rx="4" fill="#667781" opacity="0.6"/> <!-- Time -->
+
+  <!-- Contact 2 -->
+  <rect x="0" y="210" width="280" height="80" fill="WHITE"/>
+  <circle cx="40" cy="250" r="24" fill="#E9EDEF"/>
+  <rect x="80" y="235" width="100" height="12" rx="4" fill="#111B21"/>
+  <rect x="80" y="260" width="140" height="10" rx="4" fill="#667781"/>
+  
+  <!-- Contact 3 -->
+  <rect x="0" y="290" width="280" height="80" fill="WHITE"/>
+  <circle cx="40" cy="330" r="24" fill="#E9EDEF"/>
+  <rect x="80" y="315" width="110" height="12" rx="4" fill="#111B21"/>
+  <rect x="80" y="340" width="130" height="10" rx="4" fill="#667781"/>
+
+  <!-- Chat Area (Right) -->
+  <!-- Chat Header -->
+  <rect x="280" width="520" height="70" fill="#F0F2F5"/>
+  <circle cx="320" cy="35" r="20" fill="#25D366"/>
+  <rect x="355" y="25" width="140" height="12" rx="4" fill="#111B21"/>
+  <rect x="355" y="45" width="80" height="8" rx="4" fill="#667781"/>
+  
+  <!-- Messages -->
+  <!-- Incoming (White) -->
+  <g transform="translate(320, 150)">
+    <path d="M0 10C0 4.477 4.477 0 10 0H260C265.523 0 270 4.477 270 10V50C270 55.523 265.523 60 260 60H10C4.477 60 0 55.523 0 50V10Z" fill="white" filter="drop-shadow(0 1px 1px rgba(0,0,0,0.1))"/>
+    <path d="M-8 0L0 0V10L-8 0Z" fill="white"/> <!-- Tail -->
+    <text x="20" y="25" font-family="sans-serif" font-size="14" fill="#111B21">Hi, I'd like to check my order status.</text>
+    <text x="220" y="50" font-family="sans-serif" font-size="11" fill="#667781">10:42 AM</text>
+  </g>
+
+  <!-- Outgoing (Green) -->
+  <g transform="translate(480, 240)">
+     <path d="M0 10C0 4.477 4.477 0 10 0H280C285.523 0 290 4.477 290 10V90C290 95.523 285.523 100 280 100H10C4.477 100 0 95.523 0 90V10Z" fill="#D9FDD3" filter="drop-shadow(0 1px 1px rgba(0,0,0,0.1))"/>
+    <path d="M290 0L298 0L290 10V0Z" fill="#D9FDD3"/> <!-- Tail -->
+    <text x="15" y="25" font-family="sans-serif" font-weight="bold" font-size="14" fill="#111B21">Automatic Reply 🤖</text>
+    <text x="15" y="50" font-family="sans-serif" font-size="14" fill="#111B21">Hello! Your order #8832 is currently</text>
+    <text x="15" y="70" font-family="sans-serif" font-size="14" fill="#111B21">being prepared. ETA: 30 mins.</text>
+    <text x="240" y="90" font-family="sans-serif" font-size="11" fill="#667781">10:42 AM</text>
+    <path d="M275 88L280 93L285 85" stroke="#53BDEB" stroke-width="1.5" fill="none"/> <!-- Read ticks -->
+  </g>
+
+  <!-- Incoming (White) -->
+  <g transform="translate(320, 360)">
+    <path d="M0 10C0 4.477 4.477 0 10 0H180C185.523 0 190 4.477 190 10V50C190 55.523 185.523 60 180 60H10C4.477 60 0 55.523 0 50V10Z" fill="white" filter="drop-shadow(0 1px 1px rgba(0,0,0,0.1))"/>
+    <path d="M-8 0L0 0V10L-8 0Z" fill="white"/> <!-- Tail -->
+    <text x="20" y="35" font-family="sans-serif" font-size="14" fill="#111B21">Great, thank you! 🙏</text>
+    <text x="140" y="50" font-family="sans-serif" font-size="11" fill="#667781">10:43 AM</text>
+  </g>
+
+  <!-- Footer Input -->
+  <rect x="280" y="530" width="520" height="70" fill="#F0F2F5"/>
+  <rect x="350" y="545" width="380" height="40" rx="8" fill="white"/>
+  <circle cx="315" cy="565" r="12" fill="none" stroke="#54656F" stroke-width="2"/> <!-- Emoji -->
+  <circle cx="760" cy="565" r="20" fill="#25D366"/> <!-- Send Icon Background -->
+  <path d="M755 560L765 565L755 570V560Z" fill="white"/>
+</svg>

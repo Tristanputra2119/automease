@@ -34,11 +34,10 @@ export default function HowItWorksSection() {
                      1
                   </div>
                   <h3 className="font-bold text-lg mb-2">
-                     Understand Your Workflow
+                     We Learn How You Work
                   </h3>
                   <p className="text-gray-500 text-sm">
-                     We learn how your business operates and identify repetitive
-                     tasks
+                     We analyze your daily operations to find where we can save you time
                   </p>
                </div>
 
@@ -68,11 +67,10 @@ export default function HowItWorksSection() {
                      2
                   </div>
                   <h3 className="font-bold text-base mb-2">
-                     Design Custom Automation
+                     We Build Your Solution
                   </h3>
                   <p className="text-gray-500 text-sm">
-                     We create a tailored workflow using n8n based on your business
-                     needs
+                     We design a custom system that fits your exact business needs
                   </p>
                </div>
 
@@ -102,11 +100,10 @@ export default function HowItWorksSection() {
                      3
                   </div>
                   <h3 className="font-bold text-base mb-2">
-                     Build &amp; Implement
+                     Launch & Relax
                   </h3>
                   <p className="text-blue-50 text-sm">
-                     Your automation system is installed and tested to ensure smooth
-                     operation
+                     We set it all up and ensure it runs perfectly, so you can focus on growing
                   </p>
                </div>
             </div>
@@ -121,11 +118,10 @@ export default function HowItWorksSection() {
                         1
                      </div>
                      <h3 className="font-bold text-lg mb-2">
-                        Understand Your Workflow
+                        We Learn How You Work
                      </h3>
                      <p className="text-gray-500 text-sm">
-                        We learn how your business operates and identify repetitive
-                        tasks
+                        We analyze your daily operations to find where we can save you time
                      </p>
                   </div>
 
@@ -139,11 +135,10 @@ export default function HowItWorksSection() {
                            3
                         </div>
                         <h3 className="font-bold text-base mb-2">
-                           Build &amp; Implement
+                           Launch & Relax
                         </h3>
                         <p className="text-blue-50 text-sm">
-                           Your automation system is installed and tested to ensure
-                           smooth operation
+                           We set it all up and ensure it runs perfectly, so you can focus on growing
                         </p>
                      </div>
                   </div>
@@ -186,11 +181,10 @@ export default function HowItWorksSection() {
                            2
                         </div>
                         <h3 className="font-bold text-base mb-2">
-                           Design Custom Automation
+                           We Build Your Solution
                         </h3>
                         <p className="text-gray-500 text-sm">
-                           We create a tailored workflow using n8n based on your
-                           business needs
+                           We design a custom system that fits your exact business needs
                         </p>
                      </div>
                   </div>
